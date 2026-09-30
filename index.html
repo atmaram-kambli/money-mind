@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What's Your Money Personality?</title>
+<meta name="description" content="10 quick questions. Find out if you're a Saver, Spender, Avoider, Risk-Taker or Planner, and the money blind spot that comes with it.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="What's Your Money Personality?">
+<meta property="og:description" content="10 questions, 60 seconds. Saver, Spender, Avoider, Risk-Taker or Planner?">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#5b2bd9">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%F0%9F%AA%99%3C/text%3E%3C/svg%3E">
+<style>
+:root{--ink:#1b1147;--mute:#5b5680;--coin:#ffc933;--coin-d:#c98f00;--focus:#fff}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-height:100vh;color:#fff;background:#5b2bd9 linear-gradient(160deg,#4338ca 0%,#7c3aed 45%,#db2777 100%) fixed;
+  font:17px/1.55 ui-rounded,"Nunito","Segoe UI",system-ui,-apple-system,Roboto,sans-serif;overflow-x:hidden}
+main{max-width:600px;margin:0 auto;padding:30px 18px 60px;position:relative}
+h1,h2,h3{line-height:1.1;margin:0;font-weight:900;letter-spacing:-.02em;outline:none}
+h1{font-size:clamp(2.5rem,10vw,3.8rem)}
+h2{font-size:clamp(1.35rem,5vw,1.7rem);letter-spacing:-.01em;color:var(--ink)}
+p{margin:0}
+.card{background:#fff;color:var(--ink);border-radius:28px;padding:26px;box-shadow:0 22px 50px rgba(20,8,70,.38)}
+.btn{font:inherit;font-weight:800;cursor:pointer;color:var(--ink);background:#fff;border:0;border-radius:16px;padding:14px 22px;
+  box-shadow:0 5px 0 rgba(20,8,70,.28);transition:transform .1s,box-shadow .1s;text-decoration:none;display:inline-block;text-align:center}
+.btn:hover{transform:translateY(-2px);box-shadow:0 7px 0 rgba(20,8,70,.28)}
+.btn:active{transform:translateY(4px);box-shadow:0 1px 0 rgba(20,8,70,.28)}
+.btn.primary{background:var(--coin);box-shadow:0 5px 0 var(--coin-d)}
+.btn.primary:hover{box-shadow:0 7px 0 var(--coin-d)}
+.btn.primary:active{box-shadow:0 1px 0 var(--coin-d)}
+.btn.big{font-size:1.2rem;padding:16px 34px}
+.btn.ghost{background:rgba(255,255,255,.16);color:#fff;box-shadow:none;padding:9px 16px}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.intro{text-align:center;padding-top:34px;position:relative}
+.intro .badge{display:inline-block;background:rgba(255,255,255,.18);border-radius:99px;padding:6px 16px;font-weight:800;margin-bottom:18px}
+.lead{font-size:1.15rem;margin:16px auto 26px;max-width:32ch;color:rgba(255,255,255,.92)}
+.chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:0 0 30px;padding:0;list-style:none}
+.chips li{background:#fff;color:var(--ink);border-radius:99px;padding:7px 15px;font-weight:800;font-size:.98rem;box-shadow:0 4px 0 rgba(20,8,70,.25)}
+.fl{position:absolute;font-size:2.2rem;opacity:.9;pointer-events:none;animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-12px) rotate(8deg)}}
+.meta{margin-top:22px;font-size:.88rem;color:rgba(255,255,255,.8)}
+.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-weight:800}
+.bar{height:16px;border-radius:99px;background:rgba(255,255,255,.25);overflow:hidden;margin-bottom:22px}
+.bar span{display:block;height:100%;background:var(--coin);border-radius:99px;transition:width .3s}
+.opts{display:grid;gap:12px;margin:22px 0 0;padding:0;list-style:none}
+.opt{width:100%;display:flex;align-items:center;gap:12px;text-align:left;font-weight:700;padding:14px 16px;background:#f5f3ff;
+  border:2px solid #ddd6fe;box-shadow:none;border-radius:18px}
+.opt:hover{border-color:#7c3aed;box-shadow:none;transform:translateY(-2px)}
+.opt:active{transform:none;box-shadow:none}
+.opt i{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-style:normal;font-weight:900;color:#fff;background:linear-gradient(135deg,#7c3aed,#db2777)}
+.opt[aria-pressed="true"]{background:var(--coin);border-color:var(--coin-d)}
+.hero{padding:0;overflow:hidden;text-align:center}
+.head{padding:34px 20px 26px;color:#fff;background:linear-gradient(135deg,var(--tc),color-mix(in srgb,var(--tc) 50%,#1b1147))}
+.head .emoji{font-size:5.4rem;line-height:1;display:block;animation:pop .7s cubic-bezier(.2,1.4,.4,1) both}
+@keyframes pop{0%{transform:scale(.2) rotate(-20deg);opacity:0}100%{transform:none;opacity:1}}
+.head .kick{font-weight:800;opacity:.9;margin-top:6px}
+.head h1{font-size:clamp(2.2rem,9vw,3.2rem);margin:4px 0 8px}
+.head .tag{font-weight:700;font-style:italic;opacity:.95}
+.body{padding:22px 24px 26px;text-align:left}
+.sec{margin-top:18px;padding:14px 16px;border-radius:16px;background:#f5f3ff}
+.sec h3{font-size:1.02rem;margin-bottom:3px;color:var(--ink)}
+.sec p{color:var(--mute)}
+.mix{margin-top:20px;display:grid;gap:10px}
+.mix h3{color:var(--ink);font-size:1.05rem}
+.row{display:grid;grid-template-columns:112px 1fr 42px;gap:10px;align-items:center;font-weight:800;font-size:.95rem;color:var(--ink)}
+.row .track{height:14px;border-radius:99px;background:#ece8fb;overflow:hidden}
+.row .track span{display:block;height:100%;border-radius:99px}
+.row b{text-align:right}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;justify-content:center}
+.cta{margin-top:24px;text-align:center}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:#fff;padding:10px 18px;border-radius:99px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .2s;z-index:9}
+.toast.on{opacity:1}
+.cf{position:fixed;top:-40px;font-size:1.6rem;pointer-events:none;z-index:8;animation:fall 2.6s linear forwards}
+@keyframes fall{to{transform:translateY(112vh) rotate(420deg)}}
+[hidden]{display:none!important}
+@media (max-width:420px){.row{grid-template-columns:92px 1fr 38px}.card{padding:20px}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<main id="app" aria-live="polite"></main>
+<div class="toast" id="toast" role="status"></div>
+<noscript><main><p>This quiz needs JavaScript. Please enable it and reload.</p></main></noscript>
+
+<script>
+"use strict";
+/* ---------- CONFIG: edit these before deploying ---------- */
+const CONFIG = {
+  handle: "@ramkamblii",
+  newsletterUrl: "",              // paste your Substack URL here to show the subscribe button
+  shareTag: "#MoneyPersonality"
+};
+
+/* ---------- DATA ---------- */
+const ORDER = ["S","P","A","R","L"];
+const TYPES = {
+  S:{n:"The Saver",e:"🐿️",c:"#2f9e44",
+    tag:"Nuts stored. Winter? Bring it on.",
+    d:"You feel calm when the balance is healthy. You'd rather miss a sale than miss an emergency fund, and you notice small leaks before anyone else does.",
+    up:"Stability. You're rarely caught off guard, and you can ride out bad months.",
+    bl:"Loss aversion. Money that never works can lose ground to inflation, and too much caution can crowd out enjoying life.",
+    tip:"Look at where your idle cash sits, and set a monthly 'guilt-free' amount you're allowed to enjoy."},
+  P:{n:"The Spender",e:"🦚",c:"#e8590c",
+    tag:"Life is short. Order the dessert.",
+    d:"You're generous, spontaneous and fun to be around. Money is for living, and experiences feel worth more than a bigger number in the bank.",
+    up:"Joy and generosity. You make memories and people love your company.",
+    bl:"Present bias. Future You is easy to forget when Present You has a cart open at 11 pm.",
+    tip:"Try paying yourself first: automate a small transfer on salary day, then spend the rest without guilt."},
+  A:{n:"The Avoider",e:"🦤",c:"#7048e8",
+    tag:"Balance? Never heard of her.",
+    d:"Money talk makes you tense, so you'd rather not open the app. Bills get paid eventually, but the full picture stays a little blurry.",
+    up:"Low obsession. You're not chasing every trend and you don't let money run your mood.",
+    bl:"The ostrich effect. Not looking doesn't make the numbers change, it just removes your say in them.",
+    tip:"Pick one 10-minute money date a month. Just look, with no decisions needed, and ease in from there."},
+  R:{n:"The Risk-Taker",e:"🎲",c:"#e03131",
+    tag:"Fortune favours the bold. Mostly.",
+    d:"You love the upside and get restless with slow, boring plans. You'll try the new thing, the hot tip or the side hustle before most people finish researching.",
+    up:"Ambition. You act while others wait, and that's how some big wins happen.",
+    bl:"Overconfidence and FOMO. A few wins can feel like skill, and that makes the next bet bigger.",
+    tip:"Give your risk a 'sandbox' (a fixed slice you can afford to lose) and keep the core on autopilot."},
+  L:{n:"The Planner",e:"🧭",c:"#1c7ed6",
+    tag:"There's a spreadsheet for that.",
+    d:"You like buckets, goals and dates. You know roughly where every rupee goes, and you feel safest when there's a plan on paper.",
+    up:"Clarity. You make decisions on purpose, and your future self usually thanks you.",
+    bl:"Analysis paralysis. A perfect plan you never start is worth less than a good plan you follow.",
+    tip:"Set a deadline for decisions. Pick the 80% option, start, and adjust as you go."}
+};
+const QUESTIONS = [
+  ["Salary just hit your account. What's your first move?",
+    [["Move a chunk to savings before touching anything","S"],["Treat yourself a little. You earned it","P"],["Don't open the bank app. I'll look later","A"],["Split it into buckets: rent, bills, SIP, fun","L"]]],
+  ["A festival sale shows 50% off something you never planned to buy.",
+    [["Add to cart. It's basically saving money","P"],["Close the tab. A discount still costs money","S"],["Compare prices for an hour, then decide","L"],["Ignore it. Deals stress me out","A"]]],
+  ["A friend swears by a 'sure-shot' stock or crypto tip.",
+    [["Put some in tonight. Don't want to miss it","R"],["Research first, maybe start small","L"],["No thanks. A fixed deposit lets me sleep","S"],["Nod politely and change the subject","A"]]],
+  ["A surprise ₹10,000 lands in your account.",
+    [["Spend it on something fun","P"],["Straight to savings","S"],["Put it into something with big upside","R"],["Divide it as per my plan","L"]]],
+  ["How well do you know your bank balance right now?",
+    [["Not a clue, and I'd like to keep it that way","A"],["To the rupee","L"],["Roughly, and it looks healthy","S"],["Enough till the 25th, hopefully","P"]]],
+  ["Friends plan an expensive trip.",
+    [["I'm in! I'll figure out the money later","P"],["Politely skip. It's not in the budget","S"],["Check my numbers first, join if it fits","L"],["In. I'll make it back on a side hustle","R"]]],
+  ["Your credit card bill arrives.",
+    [["Leave it unopened for a few days","A"],["Pay in full on the due date","L"],["Pay the minimum and hope for the best","P"],["Pay immediately. I hate owing anyone","S"]]],
+  ["Your investments drop 15% in a month.",
+    [["Buy more. It's on sale","R"],["Uninstall the app for a while","A"],["Review the plan, keep the SIPs running","L"],["This is why I like safe options","S"]]],
+  ["Money, to you, mostly means…",
+    [["Security","S"],["Experiences","P"],["A game worth winning","R"],["Stress","A"],["A tool to reach goals","L"]]],
+  ["Your ideal free weekend looks like…",
+    [["Brunch, shopping, and no regrets","P"],["Something free or cheap and cosy","S"],["Staying in and ignoring UPI notifications","A"],["Working on a side project or checking the markets","R"],["A planned outing within a set budget","L"]]]
+];
+
+/* ---------- STATE / HELPERS ---------- */
+const app = document.getElementById("app");
+let idx = 0, answers = [];
+const $ = (h) => { const t = document.createElement("template"); t.innerHTML = h.trim(); return t.content.firstChild; };
+const tally = (ans) => { const s = {S:0,P:0,A:0,R:0,L:0}; ans.forEach(t => s[t]++); return s; };
+const winner = (s) => ORDER.reduce((a,b) => s[b] > s[a] ? b : a, ORDER[0]);
+const shareUrl = (s) => location.origin && location.origin !== "null"
+  ? location.origin + location.pathname + "#s=" + ORDER.map(k => s[k]).join(",")
+  : location.href.split("#")[0] + "#s=" + ORDER.map(k => s[k]).join(",");
+function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.classList.add("on"); clearTimeout(toast.h); toast.h = setTimeout(() => t.classList.remove("on"), 1800); }
+function mount(node){ app.replaceChildren(node); const h = node.querySelector("h1,h2"); if(h){ h.tabIndex = -1; h.focus({preventScroll:true}); } window.scrollTo({top:0}); }
+function parseHash(){
+  const m = location.hash.match(/^#s=(\d+(?:,\d+){4})$/); if(!m) return null;
+  const v = m[1].split(",").map(Number);
+  if(v.some(n => n > 10) || v.reduce((a,b) => a+b, 0) !== 10) return null;
+  const s = {}; ORDER.forEach((k,i) => s[k] = v[i]); return s;
+}
+
+/* ---------- VIEWS ---------- */
+function intro(){
+  mount($(`<section class="intro">
+    <span class="fl" style="left:2%;top:0;animation-delay:0s" aria-hidden="true">🪙</span>
+    <span class="fl" style="right:3%;top:30px;animation-delay:.8s" aria-hidden="true">💸</span>
+    <span class="fl" style="left:8%;top:52%;animation-delay:1.4s" aria-hidden="true">📈</span>
+    <span class="fl" style="right:6%;top:58%;animation-delay:2s" aria-hidden="true">✨</span>
+    <span class="badge">10 questions · 1 minute</span>
+    <h1>What's your money personality?</h1>
+    <p class="lead">Find out how you really earn, spend and worry, and the blind spot that comes with it. No sign-up, and your answers stay on your device.</p>
+    <ul class="chips" aria-label="Possible results"><li>🐿️ Saver</li><li>🦚 Spender</li><li>🦤 Avoider</li><li>🎲 Risk-Taker</li><li>🧭 Planner</li></ul>
+    <button class="btn primary big" id="go">Start the quiz</button>
+    <p class="meta">For fun and self-awareness, not financial advice.</p>
+  </section>`));
+  document.getElementById("go").onclick = () => { idx = 0; answers = []; try{ history.replaceState(null,"",location.href.split("#")[0]); }catch(e){} question(); };
+}
+
+function question(){
+  const [q, opts] = QUESTIONS[idx];
+  const n = QUESTIONS.length;
+  const node = $(`<section>
+    <div class="top"><span>Question ${idx+1} of ${n}</span>${idx ? '<button class="btn ghost" id="back">Back</button>' : '<span></span>'}</div>
+    <div class="bar" role="progressbar" aria-valuemin="0" aria-valuemax="${n}" aria-valuenow="${idx}"><span style="width:${idx/n*100}%"></span></div>
+    <div class="card"><h2>${q}</h2><ul class="opts"></ul></div>
+  </section>`);
+  const ul = node.querySelector(".opts");
+  opts.forEach(([text,type],oi) => {
+    const li = document.createElement("li"), b = document.createElement("button");
+    b.className = "btn opt"; b.innerHTML = "<i>" + "ABCDE"[oi] + "</i><span></span>"; b.lastChild.textContent = text; b.setAttribute("aria-pressed", answers[idx] === type ? "true" : "false");
+    b.onclick = () => { b.setAttribute("aria-pressed","true"); answers[idx] = type; setTimeout(() => { idx++; idx < n ? question() : finish(); }, 160); };
+    li.appendChild(b); ul.appendChild(li);
+  });
+  const back = node.querySelector("#back"); if(back) back.onclick = () => { idx--; question(); };
+  mount(node);
+}
+
+function finish(){
+  const s = tally(answers);
+  try{ history.replaceState(null,"",location.href.split("#")[0] + "#s=" + ORDER.map(k => s[k]).join(",")); }catch(e){}
+  result(s, true);
+}
+function confetti(){
+  if(matchMedia("(prefers-reduced-motion:reduce)").matches) return;
+  const em = ["🎉","🪙","✨","💸","🎊"];
+  for(let i=0;i<26;i++){ const e = document.createElement("span"); e.className = "cf"; e.textContent = em[i % em.length];
+    e.style.left = Math.random()*96 + "vw"; e.style.animationDelay = Math.random()*.9 + "s"; document.body.appendChild(e); setTimeout(() => e.remove(), 3800); }
+}
+function result(s, own){
+  const k = winner(s), t = TYPES[k];
+  const rows = [...ORDER].sort((a,b) => s[b]-s[a]).map(x =>
+    `<div class="row"><span>${TYPES[x].e} ${TYPES[x].n.replace("The ","")}</span><div class="track"><span style="width:${s[x]*10}%;background:${TYPES[x].c}"></span></div><b>${s[x]*10}%</b></div>`).join("");
+  const node = $(`<section>
+    <div class="card hero" style="--tc:${t.c}">
+      <div class="head">
+        <span class="emoji" aria-hidden="true">${t.e}</span>
+        <p class="kick">${own ? "Your money personality is" : "This money personality is"}</p>
+        <h1>${t.n}</h1>
+        <p class="tag">${t.tag}</p>
+      </div>
+      <div class="body">
+        <p>${t.d}</p>
+        <div class="sec"><h3>💪 Superpower</h3><p>${t.up}</p></div>
+        <div class="sec"><h3>🕳️ Blind spot</h3><p>${t.bl}</p></div>
+        <div class="sec"><h3>🌱 Try this</h3><p>${t.tip}</p></div>
+      </div>
+    </div>
+    <div class="card mix" style="margin-top:18px" aria-label="Score breakdown"><h3>Your mix</h3>${rows}</div>
+    <div class="actions">
+      <button class="btn primary" id="sh">Share on X</button>
+      <button class="btn" id="cp">Copy link</button>
+      <button class="btn" id="dl">Save card</button>
+    </div>
+    <div class="cta">
+      ${CONFIG.newsletterUrl ? `<a class="btn" href="${CONFIG.newsletterUrl}" target="_blank" rel="noopener">Get more money insights</a><br><br>` : ""}
+      <button class="btn ghost" id="re">${own ? "Retake the quiz" : "Take the quiz yourself"}</button>
+    </div>
+    <p class="meta" style="text-align:center">Made by ${CONFIG.handle}. A light-hearted look at common money-behaviour patterns, not financial advice.</p>
+  </section>`);
+  const text = `I'm ${t.n} ${t.e}. "${t.tag}" What's your money personality? ${CONFIG.shareTag}`;
+  node.querySelector("#sh").onclick = () => window.open("https://twitter.com/intent/tweet?text=" + encodeURIComponent(text) + "&url=" + encodeURIComponent(shareUrl(s)), "_blank", "noopener");
+  node.querySelector("#cp").onclick = async () => {
+    try { await navigator.clipboard.writeText(shareUrl(s)); toast("Link copied"); }
+    catch(e){ window.prompt("Copy this link:", shareUrl(s)); }
+  };
+  node.querySelector("#dl").onclick = () => saveCard(s, k);
+  node.querySelector("#re").onclick = intro;
+  mount(node);
+  if(own) confetti();
+}
+
+/* ---------- SHARE CARD (canvas → PNG) ---------- */
+function saveCard(s, k){
+  const t = TYPES[k], W = 1080, H = 1350, c = document.createElement("canvas");
+  c.width = W; c.height = H; const g = c.getContext("2d");
+  const bg = g.createLinearGradient(0,0,W,H); bg.addColorStop(0,"#4338ca"); bg.addColorStop(.5,"#7c3aed"); bg.addColorStop(1,"#db2777");
+  g.fillStyle = bg; g.fillRect(0,0,W,H);
+  g.fillStyle = "#fff"; g.beginPath(); g.roundRect(80,120,920,1090,44); g.fill();
+  g.save(); g.beginPath(); g.roundRect(80,120,920,1090,44); g.clip(); g.fillStyle = t.c; g.fillRect(80,120,920,36); g.restore();
+  g.textAlign = "center"; g.fillStyle = "#4a5878"; g.font = "700 34px system-ui,sans-serif";
+  g.fillText("My money personality is", 540, 250);
+  g.font = "200px serif"; g.fillText(t.e, 540, 470);
+  g.fillStyle = t.c; g.font = "900 96px system-ui,sans-serif"; g.fillText(t.n, 540, 610);
+  g.fillStyle = "#1b1147"; g.font = "italic 700 38px system-ui,sans-serif"; g.fillText(t.tag, 540, 675, 820);
+  [...ORDER].sort((a,b) => s[b]-s[a]).forEach((x,i) => {
+    const y = 760 + i*80;
+    g.textAlign = "left"; g.fillStyle = "#0e1b3d"; g.font = "700 32px system-ui,sans-serif";
+    g.fillText(TYPES[x].e + " " + TYPES[x].n.replace("The ",""), 140, y+8);
+    g.fillStyle = "#ece8fb"; g.fillRect(420,y-18,420,30);
+    g.fillStyle = TYPES[x].c; g.fillRect(420,y-18,420*s[x]/10,30);
+    g.textAlign = "right"; g.fillStyle = "#0e1b3d"; g.fillText(s[x]*10 + "%", 940, y+8);
+  });
+  g.textAlign = "center"; g.fillStyle = "#4a5878"; g.font = "700 30px system-ui,sans-serif";
+  g.fillStyle = "#fff"; g.fillText("What's your money personality? · " + CONFIG.handle, 540, 1290);
+  c.toBlob(b => {
+    if(!b){ toast("Couldn't create image"); return; }
+    const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "my-money-personality.png";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(() => URL.revokeObjectURL(a.href), 2000); toast("Card saved");
+  }, "image/png");
+}
+
+/* ---------- BOOT ---------- */
+window.addEventListener("hashchange", () => { const s = parseHash(); if(s && !app.querySelector(".hero")) result(s, false); });
+(function(){ const s = parseHash(); s ? result(s, false) : intro(); })();
+</script>
+</body>
+</html>
